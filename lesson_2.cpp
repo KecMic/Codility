@@ -83,9 +83,8 @@ int solution2(vector<int> &A) {
 }
 
 void run_eval_1(vector<int> (*solution1)(vector<int> &A, int K), vector<int> &A, int K) {
-   vector<int> res;
    long start = nanos();
-   res = solution1(A, K);
+   vector<int> res = solution1(A, K);
    long elapsed_ns = nanos() - start;
    cout << "result: " << ANSI_COLOR_BG_CYAN << " ";
    for (const auto& n : res) {
@@ -96,9 +95,8 @@ void run_eval_1(vector<int> (*solution1)(vector<int> &A, int K), vector<int> &A,
 }
 
 void run_eval_2(int (*solution2)(vector<int> &A), vector<int> &A) {
-   int res;
    long start = nanos();
-   res = solution2(A);
+   int res = solution2(A);
    long elapsed_ns = nanos() - start;
    cout << "=> result: " << ANSI_COLOR_BG_CYAN << " " << res << " " << ANSI_COLOR_RESET;
    cout << ", took " << elapsed_ns << " ns, or " << elapsed_ns/1000.0 << " µs\n";
